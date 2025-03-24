@@ -7,12 +7,12 @@ use App\Models\AutomationModel;
 
 class AutomationController extends Controller
 {
-    public function index()
+    public function main()
     {
         $model = new AutomationModel();
         $data['automations'] = $model->findAll();
 
-        return view('automations/index', $data);
+        return view('dashboard', $data);
     }
 
     public function create()
