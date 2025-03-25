@@ -11,26 +11,31 @@ permissions:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
 
+    # Change the working directory to the 'codeRunner' folder
+    - name: Set working directory to codeRunner
+      run: cd codeRunner
+
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
+      working-directory: ./codeRunner
 
     - name: Cache Composer packages
       id: composer-cache
       uses: actions/cache@v3
       with:
-        path: vendor
-        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+        path: codeRunner/vendor
+        key: ${{ runner.os }}-php-${{ hashFiles('codeRunner/**/composer.lock') }}
         restore-keys: |
           ${{ runner.os }}-php-
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
+      working-directory: ./codeRunner
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
