@@ -130,13 +130,12 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <div class="navbar-nav">
-                    <div class="nav-item dropdown">
+                <div class="ms-auto"> <!-- Push profile dropdown to the right -->
+                    <div class="nav-item dropdown me-4">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-                            <i class="fas fa-user-circle me-1"></i> Admin User
+                            <i class="fas fa-user-circle me-1"></i> Profile
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <!-- <li><a class="dropdown-item" href="#"><i class="fas fa-user-cog me-1"></i> Profile</a></li> -->
                             <li><a class="dropdown-item" href="<?php echo base_url() ?>logout"><i class="fas fa-sign-out-alt me-1"></i> Logout</a></li>
                         </ul>
                     </div>
