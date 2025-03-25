@@ -44,48 +44,41 @@
     </div>
 
     <div class="row">
-        <!-- Automations List -->
         <div class="col-lg-8">
-            <div class="card">
-
-                <div class="card-body p-0">
-                    <div class="list-group list-group-flush">
-                        <!-- Server Health Check -->
-                        <?php foreach ($automations as $automation): ?>
-                            <div class="list-group-item automation-card p-3">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="mb-1">
-                                        <?= $automation['name']; ?>
-                                        <span class="badge text-white status-badge status-completed">
-                                            <i class="fas fa-check-circle"></i><?= $automation['status']; ?>
-                                        </span>
-                                    </h6>
-                                    <div>
-                                        <button class="btn btn-sm btn-outline-secondary">
-                                            <i class="fas fa-ellipsis-v"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <p class="mb-1 small">Monitors server health metrics and sends alerts</p>
-                                <div class="d-flex mt-2">
-                                    <small class="text-muted me-3">
-                                        <i class="fas fa-calendar-check me-1"></i> Last: Mar 11, 09:00
-                                    </small>
-                                    <small class="text-muted">
-                                        <i class="fas fa-repeat me-1"></i> <?= $automation['schedule_time']; ?>
-                                    </small>
-                                    <?php if ($automation['status'] == 'disabled'): ?>
-                                        <a href="/automation/enable/<?= $automation['id']; ?>">Enable</a>
-                                    <?php else: ?>
-                                        <a href="/automation/disable/<?= $automation['id']; ?>">Disable</a>
-                                    <?php endif; ?>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-
+            <?php foreach ($automations as $automation): ?>
+                <div class="list-group-item automation-card p-3 border rounded">
+                    <div class="d-flex justify-content-between">
+                        <h6 class="mb-1">
+                            <?= $automation['name']; ?>
+                            <span class="badge text-white status-badge status-completed">
+                                <i class="fas fa-check-circle"></i><?= $automation['status']; ?>
+                            </span>
+                        </h6>
+                        <div>
+                            <button class="btn btn-sm btn-outline-secondary">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="mb-1 small">Monitors server health metrics and sends alerts</p>
+                    <div class="d-flex mt-2">
+                        <small class="text-muted me-3">
+                            <i class="fas fa-calendar-check me-1"></i> Last: Mar 11, 09:00
+                        </small>
+                        <small class="text-muted">
+                            <i class="fas fa-repeat me-1"></i> <?= $automation['schedule_time']; ?>
+                        </small>
+                        <?php if ($automation['status'] == 'disabled'): ?>
+                            <a href="/automation/enable/<?= $automation['id']; ?>">Enable</a>
+                        <?php else: ?>
+                            <a href="/automation/disable/<?= $automation['id']; ?>">Disable</a>
+                        <?php endif; ?>
                     </div>
                 </div>
-            </div>
+            <?php endforeach; ?>
+
+
+
         </div>
 
     </div>
