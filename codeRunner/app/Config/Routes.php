@@ -5,12 +5,16 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'AutomationController::main');
-$routes->get('automations/create', 'AutomationController::create');
-$routes->post('automations/store', 'AutomationController::store');
-$routes->get('automations/enable/(:num)', 'AutomationController::enable/$1');
-$routes->get('automations/disable/(:num)', 'AutomationController::disable/$1');
 
+$routes->get('/', 'DashboardController::index');
+
+// Automation UI Handling (Crud)
+$routes->group('automation', static function ($routes) {
+    $routes->get('create', 'AutomationController::create');
+    $routes->post('store', 'AutomationController::store');
+    $routes->get('enable/(:num)', 'AutomationController::enable/$1');
+    $routes->get('disable/(:num)', 'AutomationController::disable/$1');
+});
 
 
 service('auth')->routes($routes);

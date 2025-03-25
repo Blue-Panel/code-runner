@@ -7,20 +7,13 @@ use App\Models\AutomationModel;
 
 class AutomationController extends Controller
 {
-    public function main()
-    {
-        $model = new AutomationModel();
-        $data['automations'] = $model->findAll();
 
-        return view('dashboard', $data);
-    }
-
-    public function create()
+    public function createView()
     {
         return view('automations/create');
     }
 
-    public function store()
+    public function create()
     {
         $model = new AutomationModel();
         $data = [
@@ -32,7 +25,7 @@ class AutomationController extends Controller
         ];
         $model->insert($data);
 
-        return redirect()->to('/automations');
+        return redirect()->to('/');
     }
 
     public function enable($id)
@@ -40,7 +33,7 @@ class AutomationController extends Controller
         $model = new AutomationModel();
         $model->update($id, ['status' => 'enabled']);
 
-        return redirect()->to('/automations');
+        return redirect()->to('/');
     }
 
     public function disable($id)
@@ -48,6 +41,6 @@ class AutomationController extends Controller
         $model = new AutomationModel();
         $model->update($id, ['status' => 'disabled']);
 
-        return redirect()->to('/automations');
+        return redirect()->to('/');
     }
 }
