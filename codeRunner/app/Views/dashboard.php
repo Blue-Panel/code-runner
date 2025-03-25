@@ -32,11 +32,11 @@
                                 <i class="fas fa-check-circle me-2"></i><?= $automation['status']; ?>
                             </span>
                         </h6>
-                        <div>
+                        <!-- <div>
                             <button class="btn btn-sm btn-outline-secondary">
                                 <i class="fas fa-ellipsis-v"></i>
                             </button>
-                        </div>
+                        </div> -->
                     </div>
                     <p class="mb-1 small"><?= $automation['description']; ?></p>
                     <div class="d-flex mt-2">
