@@ -3,7 +3,7 @@
 
 
 <div class="container py-4">
-    <!-- Status Overview -->
+
     <div class="row mb-4">
         <div class="col-md-3 col-sm-6 mb-3">
             <div class="card h-100 p-3">
@@ -56,7 +56,11 @@
 
 
         </div>
-
+        <div class="col-lg-8">
+            <div class="d-flex justify-content-center">
+                <a class="btn btn-primary" href="<?php echo base_url() ?>automation/create-view">Create +</a>
+            </div>
+        </div>
     </div>
 </div>
 
