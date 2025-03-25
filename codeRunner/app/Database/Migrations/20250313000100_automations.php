@@ -20,7 +20,11 @@ class Automations extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'script_path' => [
+            'description' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'script_name' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -28,15 +32,18 @@ class Automations extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '50',
             ],
-            'cron_expression' => [
+            'schedule_date' => [
                 'type' => 'VARCHAR',
                 'constraint' => '50',
-                'null' => true,
             ],
             'status' => [
                 'type' => 'ENUM',
                 'constraint' => ['enabled', 'disabled'],
                 'default' => 'disabled',
+            ],
+            'last_run' => [
+                'type' => 'TIMESTAMP',
+                'null' => true
             ],
             'created_at' => [
                 'type' => 'TIMESTAMP',

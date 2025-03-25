@@ -51,7 +51,7 @@
                         <h6 class="mb-1">
                             <?= $automation['name']; ?>
                             <span class="badge text-white status-badge status-completed">
-                                <i class="fas fa-check-circle"></i><?= $automation['status']; ?>
+                                <i class="fas fa-check-circle me-2"></i><?= $automation['status']; ?>
                             </span>
                         </h6>
                         <div>
@@ -60,13 +60,11 @@
                             </button>
                         </div>
                     </div>
-                    <p class="mb-1 small">Monitors server health metrics and sends alerts</p>
+                    <p class="mb-1 small"><?= $automation['description']; ?></p>
                     <div class="d-flex mt-2">
-                        <small class="text-muted me-3">
-                            <i class="fas fa-calendar-check me-1"></i> Last: Mar 11, 09:00
-                        </small>
                         <small class="text-muted">
-                            <i class="fas fa-repeat me-1"></i> <?= $automation['schedule_time']; ?>
+                            <i class="fas fa-calendar-check me-1"></i> <?= $automation['schedule_date']; ?>
+                            at <?= $automation['schedule_time']; ?>
                         </small>
                         <?php if ($automation['status'] == 'disabled'): ?>
                             <a href="/automation/enable/<?= $automation['id']; ?>">Enable</a>
