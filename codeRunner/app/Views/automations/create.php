@@ -3,7 +3,7 @@
 
 <div class="container mt-5">
     <h2 class="mb-4">Create Automation</h2>
-    <form action="process_automation.php" method="POST">
+    <form action="<?php echo base_url() ?>automation/create" method="POST">
         <div class="mb-3">
             <label for="name" class="form-label">Automation Name</label>
             <input type="text" class="form-control" id="name" name="name" required>

@@ -18,15 +18,18 @@ class AutomationController extends Controller
         $model = new AutomationModel();
         $data = [
             'name' => $this->request->getPost('name'),
-            'script_path' => $this->request->getPost('script_path'),
+            'description' => $this->request->getPost('description'),
+            'script_name' => $this->request->getPost('script_name'),
             'schedule_time' => $this->request->getPost('schedule_time'),
-            'cron_expression' => $this->request->getPost('cron_expression'),
-            'status' => 'disabled'
+            'schedule_date' => $this->request->getPost('schedule_date'),
+            'status' => $this->request->getPost('status') ?? 'disabled'
         ];
+
         $model->insert($data);
 
         return redirect()->to('/');
     }
+
 
     public function enable($id)
     {
