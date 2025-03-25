@@ -45,9 +45,9 @@
                             at <?= $automation['schedule_time']; ?>
                         </small>
                         <?php if ($automation['status'] == 'disabled'): ?>
-                            <a href="/automation/enable/<?= $automation['id']; ?>">Enable</a>
+                            <a style="--bs-btn-padding-y: .12rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" class="btn  btn-sm btn-secondary ms-2" href="/automation/enable/<?= $automation['id']; ?>">Enable</a>
                         <?php else: ?>
-                            <a href="/automation/disable/<?= $automation['id']; ?>">Disable</a>
+                            <a style="--bs-btn-padding-y: .12rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" class="btn  btn-sm btn-secondary ms-2" href="/automation/disable/<?= $automation['id']; ?>">Disable</a>
                         <?php endif; ?>
                     </div>
                 </div>
