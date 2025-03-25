@@ -49,6 +49,8 @@
                         <?php else: ?>
                             <a style="--bs-btn-padding-y: .12rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" class="btn  btn-sm btn-secondary ms-2" href="/automation/disable/<?= $automation['id']; ?>">Disable</a>
                         <?php endif; ?>
+                        <a style="--bs-btn-padding-y: .12rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" class="btn  btn-sm btn-secondary ms-2" href="#">Edit</a>
+
                     </div>
                 </div>
             <?php endforeach; ?>
