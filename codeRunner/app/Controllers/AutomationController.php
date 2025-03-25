@@ -27,9 +27,37 @@ class AutomationController extends Controller
 
         $model->insert($data);
 
+        $scriptName = $this->request->getPost('script_name');
+        $this->createScriptFile($scriptName);
+
         return redirect()->to('/');
     }
 
+    private function createScriptFile($fileName)
+    {
+        if (!$fileName) {
+            $this->response->setStatusCode(404);
+            return;
+        }
+
+
+        $directory = APPPATH . 'Automations/';
+        $filePath = $directory . $fileName . '_Automation.php';
+
+        if (!file_exists($filePath)) {
+            if (!is_dir($directory)) {
+                mkdir($directory, 0777, true);
+            }
+
+            $fileContent = "<?php\n\n// Automation Script: {$fileName}\n\n// Add your automation logic here\n";
+
+            file_put_contents($filePath, $fileContent);
+
+            echo "Script file {$filePath} created successfully!";
+        } else {
+            echo "File already exists!";
+        }
+    }
 
     public function enable($id)
     {
