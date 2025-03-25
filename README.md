@@ -15,7 +15,6 @@ Code Runners is an open-source PHP automation platform that allows users to crea
 
 #### 1. Authentication System
 - Email-based login
-- User registration
 - Password reset functionality
 - Basic user profile management
 
@@ -29,7 +28,6 @@ Code Runners is an open-source PHP automation platform that allows users to crea
 - Web-based code editor for automations
 - Direct file editing interface
 - Syntax highlighting
-- Basic error checking
 
 #### 4. Scheduling System
 - Daily scheduling for automations
@@ -61,7 +59,6 @@ Code Runners is an open-source PHP automation platform that allows users to crea
 - CSRF protection
 - Input validation
 - Secure file permissions for automation scripts
-- Role-based access control (basic implementation)
 
 ## Development Roadmap for V0.1
 
@@ -73,8 +70,8 @@ Code Runners is an open-source PHP automation platform that allows users to crea
 - [x] Implement basic user profile management
 
 ### Week 2: Automation Management
-- [ ] Design database schema for automations
-- [ ] Create CRUD interfaces for automations
+- [X] Design database schema for automations
+- [X] Create CRUD interfaces for automations
 - [ ] Implement file generation mechanism for `__Automations.php`
 - [ ] Develop web-based code editor
 - [ ] Add basic syntax validation
@@ -87,12 +84,12 @@ Code Runners is an open-source PHP automation platform that allows users to crea
 - [ ] Add error handling and reporting
 
 ### Week 4: Dashboard and Polishing
-- [ ] Design and implement dashboard
+- [X] Design and implement dashboard
 - [ ] Add automation listing and management views
 - [ ] Implement basic statistics tracking
 - [ ] Perform initial security audits
 - [ ] Prepare documentation
-- [ ] Create initial README and installation guide
+- [X] Create initial README and installation guide
 
 ## Potential Future Enhancements (Beyond V0.1)
 - Multiple scheduling frequencies (weekly, monthly)
