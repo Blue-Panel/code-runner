@@ -51,7 +51,7 @@ Code Runners is an open-source PHP automation platform that allows users to crea
 
 ### Technical Requirements
 - PHP 8.1+
-- CodeIgniter 4
+- CodeIgniter 4.6+
 - Composer dependency management
 - MySQL/MariaDB database support
 
@@ -119,7 +119,7 @@ Code Runners is an open-source PHP automation platform that allows users to crea
 ## Installation (Preliminary)
 ```bash
 # Clone the repository
-git clone https://github.com/[username]/code-runners.git
+git clone https://github.com/blue-panel/code-runners.git
 
 # Install dependencies
 composer install
